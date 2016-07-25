@@ -15,7 +15,8 @@ def index(request):
 	return render(request, 'leasingPortal/index.html', context)
 
 def buildings(request):
-	template = loader.get_template('leasingPortal/buildings.html')
+	template = loader.select_template(['leasingPortal/buildings.html',
+		                                'leasingPortal/base.html'])
 	return HttpResponse(template.render(request))
 
 def suites(request, number):
