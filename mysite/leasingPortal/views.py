@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import render
 
 from .models import Building
 
@@ -11,7 +12,7 @@ def index(request):
 	context = {
 	  'building_list': building_list,
 	}
-	return HttpResponse(template.render(context, request))
+	return render(request, 'leasingPortal/index.html', context)
 
 def buildings(request, number):
 	return HttpResponse('Hey you chose %s.' % number)
