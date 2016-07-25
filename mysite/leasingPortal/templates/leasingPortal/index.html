@@ -1,5 +1,13 @@
 {% extends "leasingPortal/base.html" %}
 
 {% block content %}
-	<p>template works</p>
+  {% if building_list %}
+  <ul>
+  	{% for building in building_list %}
+  	<li>{{building.address}}</li>
+  	{% endfor %}
+  </ul>
+  {% else %}
+	<p>no buildings</p>
+	{% endif %}
 {% endblock %}
