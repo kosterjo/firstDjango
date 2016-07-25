@@ -8,14 +8,15 @@ from .models import Building
 def index(request):
 	building_list = Building.objects.order_by('address')
 	template = loader.select_template(['leasingPortal/index.html',
-		                                'leasingPortal/base.html'])
+		                                 'leasingPortal/base.html'])
 	context = {
 	  'building_list': building_list,
 	}
 	return render(request, 'leasingPortal/index.html', context)
 
-def buildings(request, number):
-	return HttpResponse('Hey you chose %s.' % number)
+def buildings(request):
+	template = loader.get_template('leasingPortal/buildings.html')
+	return HttpResponse(template.render(request))
 
 def suites(request, number):
 	response = 'Shes at least a %s'

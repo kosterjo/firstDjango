@@ -20,6 +20,6 @@ from leasingPortal import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
-    url(r'^(?P<number>[0-9]+)/buildings/$', views.buildings, name='buildings'),
+    url(r'^buildings/$', views.buildings, name='buildings'),
     url(r'^(?P<number>[0-9]+)/suites/$', views.suites, name='suites'),
 ]
