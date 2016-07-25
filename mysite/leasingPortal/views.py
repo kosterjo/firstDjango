@@ -16,8 +16,8 @@ def index(request):
 
 def buildings(request):
 	template = loader.select_template(['leasingPortal/buildings.html',
-		                                'leasingPortal/base.html'])
-	return HttpResponse(template.render(request))
+		                                 'leasingPortal/base.html'])
+	return render(request, 'leasingPortal/buildings.html')
 
 def suites(request, number):
 	response = 'Shes at least a %s'
