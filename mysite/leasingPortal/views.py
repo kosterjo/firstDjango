@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 
 def index(request):
-	return HttpResponse('<p>Index view</p>')
+	template = loader.get_template('leasingPortal/index.html')
+	return HttpResponse(template.render(request))
 
 def buildings(request, number):
 	return HttpResponse('Hey you chose %s.' % number)
