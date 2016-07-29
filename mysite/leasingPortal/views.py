@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 from django.template import loader
 from django.shortcuts import render
@@ -22,7 +22,5 @@ def buildings(request):
 	return render(request, 'leasingPortal/buildings.html', context)
 
 def building_detail(request, building_id):
-	try:
-		building = Building.objects.get(pk=building_id)
-	except Building.DoesNotExist:
-		raise Http404("Building does not exist")
+	building = get_object_or_404(Building, pk=building_id) 
+	return render(request, 'buildings/detail.html', {'building': building} )
