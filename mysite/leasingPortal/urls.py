@@ -6,4 +6,5 @@ app_name = 'leasingPortal'
 
 urlpatterns = [
   url(r'^$', views.index, name = 'index'),
+  url(r'^buildings/$', views.buildings, name = 'buildings')
 ]
