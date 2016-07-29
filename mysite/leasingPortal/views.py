@@ -23,4 +23,4 @@ def buildings(request):
 
 def building_detail(request, building_id):
 	building = get_object_or_404(Building, pk=building_id) 
-	return render(request, 'buildings/detail.html', {'building': building} )
+	return render(request, 'leasingPortal/detail.html', {'building': building} )
