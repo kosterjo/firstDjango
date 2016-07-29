@@ -3,11 +3,4 @@
 {% block content %}
   <p>Building Address:</p>
   {{ building }}
-
-  {% if error_message%}<p><strong>{{ error_message}}</strong></p>
-  {% endif %}
-
-  <form action="{% url 'leasingPortal:addSuite' building.id %}" method="post" accept-charset="utf-8">
-  	<input type="text" name="suite#"/>
-  </form>
 {% endblock %}
