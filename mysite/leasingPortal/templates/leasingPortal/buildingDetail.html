@@ -1,9 +1,13 @@
 {% extends "leasingPortal/base.html" %}
 
 {% block content %}
-  <p>Building Address:</p>
-  {{ building.address }}
-  <br>
+  <p>Address: {{ building.address }}</p>
   <a href="{% url 'leasingPortal:building_edit' building.id %}" title="">Edit</a>
 
+  <p>Suites:</p>
+  <ul>
+    {% for suite in suite_list %}
+  	<li><p>Suite #{{ suite.number }}</p></li>
+  	{% endfor %}
+  </ul>
 {% endblock %}

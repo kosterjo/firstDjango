@@ -3,13 +3,12 @@ from django.http import HttpResponse, Http404
 from django.template import loader
 from django.shortcuts import render
 
-from .models import Building
+from .models import Building, Suite
 
 def index(request):
 	return render(request, 'leasingPortal/index.html')
 
 def buildings(request):
-	#building_list = Building.objects.order_by('address')
 	building_list = get_list_or_404(Building)
 	context = {
 	  'building_list': building_list,
@@ -19,8 +18,10 @@ def buildings(request):
 
 def building_detail(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
+	suite_list = get_list_or_404(Suite)
 	context = {
 	  'building': building,
+	  'suite_list': suite_list,
 	}
 
 	return render(request, 'leasingPortal/buildingDetail.html', context )
