@@ -2,6 +2,8 @@
 
 {% block content %}
   <p>Building Address:</p>
-  {{ building }}
-  
+  {{ building.address }}
+  <br>
+  <a href="{% url 'leasingPortal:building_edit' building.id %}" title="">Edit</a>
+
 {% endblock %}

@@ -5,7 +5,7 @@
   {% if building_list %}
   <ul>
   	{% for building in building_list %}
-  	<li><a href="{{building.id}}/">{{building.address}}</a></li>
+  	<li><a href="{% url 'leasingPortal:building_detail' building.id %}">{{building.address}}</a></li>
   	{% endfor %}
   </ul>
   {% else %}

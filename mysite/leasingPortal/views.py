@@ -6,15 +6,10 @@ from django.shortcuts import render
 from .models import Building
 
 def index(request):
-	template = loader.select_template(['leasingPortal/index.html',
-		                                 'leasingPortal/base.html'])
-
 	return render(request, 'leasingPortal/index.html')
 
 def buildings(request):
 	building_list = Building.objects.order_by('address')
-	template = loader.select_template(['leasingPortal/buildings.html',
-		                                 'leasingPortal/base.html'])
 	context = {
 	  'building_list': building_list,
 	}
@@ -22,5 +17,17 @@ def buildings(request):
 	return render(request, 'leasingPortal/buildings.html', context)
 
 def building_detail(request, building_id):
-	building = get_object_or_404(Building, pk=building_id) 
-	return render(request, 'leasingPortal/detail.html', {'building': building} )
+	building = get_object_or_404(Building, pk=building_id)
+	context = {
+	  'building': building,
+	}
+
+	return render(request, 'leasingPortal/detail.html', context )
+
+def building_edit(request, building_id):
+	building = get_object_or_404(Building, pk=building_id)
+	context = {
+	  'building': building,
+	}
+
+	return render(request, 'leasingPortal/buildingEdit.html', context)
