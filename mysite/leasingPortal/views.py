@@ -18,7 +18,7 @@ def buildings(request):
 
 def building_detail(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
-	suite_list = get_list_or_404(Suite)
+	suite_list = get_list_or_404(Suite, parent_building = building.id)
 	context = {
 	  'building': building,
 	  'suite_list': suite_list,
