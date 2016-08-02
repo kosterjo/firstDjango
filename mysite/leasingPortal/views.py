@@ -22,7 +22,7 @@ def building_detail(request, building_id):
 	  'building': building,
 	}
 
-	return render(request, 'leasingPortal/detail.html', context )
+	return render(request, 'leasingPortal/buildingDetail.html', context )
 
 def building_edit(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
