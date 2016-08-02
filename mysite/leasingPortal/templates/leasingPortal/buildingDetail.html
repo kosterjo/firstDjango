@@ -10,4 +10,14 @@
   	<li><p>Suite #{{ suite.number }}</p></li>
   	{% endfor %}
   </ul>
+
+  {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+  <br><p>Add Suite</p>
+  <form action="{% url 'leasingPortal:building_detail' building.id %}" method="get" accept-charset="utf-8">
+    Parent Building: <br>
+    <input type="text" name="parent_building"></input>
+    <br> Suite Number: <br>
+    <input type="text" name="number">
+  </form>
 {% endblock %}
