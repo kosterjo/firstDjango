@@ -33,4 +33,4 @@ class Suite(models.Model):
 	modified        = ModificationDateTimeField()
 
 	def __str__(self):
-		return "Suite#" + str(self.number)
+		return "Suite #" + str(self.number)
