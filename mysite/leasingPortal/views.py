@@ -33,3 +33,15 @@ def building_edit(request, building_id):
 	}
 
 	return render(request, 'leasingPortal/buildingEdit.html', context)
+
+def add_suite(request, building_id):
+	building = get_object_or_404(Building, pk=building_id)
+
+	return render(request, 'leasingPortal/buildingDetail.html', {
+    'building': building, 
+    'error_message': request.POST['parent_building'],
+	})
+	#try: 
+		#new_suite = request.POST
+
+	#except (KeyError, Suite.DoesNotExist)	

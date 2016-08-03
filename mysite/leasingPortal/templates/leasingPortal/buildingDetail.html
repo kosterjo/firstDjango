@@ -14,11 +14,13 @@
   {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
   <br><p>Add Suite</p>
-  <form action="{% url 'leasingPortal:building_detail' building.id %}" method="post">
+  <form action="{% url 'leasingPortal:add_suite' building.id %}" method="post">
   {% csrf_token %}
 
     Suite Number: <br>
     <input type="text" name="number"/>
+    <input type="text" name="parent_building" value="{{building.id}}" 
+     style="display:none"/>
     <br> <input type="submit" value="Suite"/>
   </form>
 

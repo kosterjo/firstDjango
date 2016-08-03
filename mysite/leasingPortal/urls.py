@@ -11,5 +11,7 @@ urlpatterns = [
   url(r'^buildings/(?P<building_id>[0-9]+)/$', 
       views.building_detail, name = 'building_detail'),
   url(r'^buildings/(?P<building_id>[0-9]+)/edit/$', 
-      views.building_edit, name = 'building_edit')
+      views.building_edit, name = 'building_edit'),
+  url(r'^buildings/(?P<building_id>[0-9]+)/add/$', 
+      views.add_suite, name = 'add_suite'),
 ]
