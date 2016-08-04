@@ -39,7 +39,7 @@ def add_suite(request, building_id):
 
 	return render(request, 'leasingPortal/buildingDetail.html', {
     'building': building, 
-    'error_message': request.POST['parent_building'],
+    'error_message': "you didn't add a suite number",
 	})
 	#try: 
 		#new_suite = request.POST
