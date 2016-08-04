@@ -1,6 +1,9 @@
 {% extends "leasingPortal/base.html" %}
 
 {% block content %}
+  <h1>Building Details</h1>
+  <br>
+  
   <p>Address: {{ building.address }}</p>
   <a href="{% url 'leasingPortal:building_edit' building.id %}" title="">Edit</a>
 
