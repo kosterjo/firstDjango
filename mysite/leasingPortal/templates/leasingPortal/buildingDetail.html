@@ -3,7 +3,7 @@
 {% block content %}
   <h1>Building Details</h1>
   <br>
-  
+
   <p>Address: {{ building.address }}</p>
   <a href="{% url 'leasingPortal:building_edit' building.id %}" title="">Edit</a>
 
@@ -21,9 +21,15 @@
   {% csrf_token %}
 
     Suite Number: <br>
-    <input type="text" name="number"/>
+    <input type="text" name="number" id="suite_number"/>
+
+    <br><p style="display:none">Date Available:</p>
+
+    <input type="datetime" name="available" id="suite_available_date" style="display:none">
+
     <input type="text" name="parent_building" value="{{building.id}}" 
      style="display:none"/>
+     
     <br> <input type="submit" value="Suite"/>
   </form>
 
