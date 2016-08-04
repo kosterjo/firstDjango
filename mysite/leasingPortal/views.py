@@ -37,11 +37,8 @@ def building_edit(request, building_id):
 def add_suite(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
 
-	return render(request, 'leasingPortal/buildingDetail.html', {
-    'building': building, 
-    'error_message': "you didn't add a suite number",
-	})
-	#try: 
-		#new_suite = request.POST
-
-	#except (KeyError, Suite.DoesNotExist)	
+	if request.POST['number'] == '':
+		return render(request, 'leasingPortal/buildingDetail.html', {
+	    'building': building, 
+	    'error_message': "you didn't add a suite number",
+		})
