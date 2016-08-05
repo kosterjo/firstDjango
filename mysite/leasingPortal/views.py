@@ -13,7 +13,7 @@ def index(request):
 	return render(request, 'leasingPortal/index.html')
 
 def buildings(request):
-	building_list =Building.objects.all()
+	building_list = Building.objects.all()
 	context = {
 	  'building_list': building_list,
 	}
@@ -22,7 +22,7 @@ def buildings(request):
 
 def building_detail(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
-	suite_list = get_list_or_404(Suite, parent_building = building.id)
+	suite_list = Suite.objects.filter(parent_building=building.id)
 	context = {
 	  'building': building,
 	  'suite_list': suite_list,
@@ -53,7 +53,7 @@ def post_building_edit(request, building_id):
 
 def add_suite(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
-	suite_list = get_list_or_404(Suite, parent_building = building.id) 
+	suite_list = Suite.objects.filter(parent_building=building.id) 
 
 	if not bool(request.POST['number']):
 		return render(request, 'leasingPortal/buildingDetail.html', {
