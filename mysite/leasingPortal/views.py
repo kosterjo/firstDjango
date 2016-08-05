@@ -55,14 +55,14 @@ def add_suite(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
 	suite_list = Suite.objects.filter(parent_building=building.id) 
 
-	if not bool(request.POST['number']):
+	if not (request.POST['number']):
 		return render(request, 'leasingPortal/buildingDetail.html', {
 	    'building': building, 
 	    'error_message': "you didn't enter a suite number",
 	    'suite_list': suite_list
 		})
 
-	if not bool(request.POST['available']):
+	if not (request.POST['available']):
 		return render(request, 'leasingPortal/buildingDetail.html', {
 	    'building': building, 
 	    'error_message': "you didn't enter an availability date",
