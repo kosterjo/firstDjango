@@ -57,11 +57,11 @@ def add_suite(request, building_id):
 		}) 	
 
 	else: 
-		number = request.POST['number']
-		date   = request.POST['available']
-		time   = datetime.now()
-		s      = Suite(parent_building=building, number=number,
-		         date_available=date)
+		number      = request.POST['number']
+		date        = str(request.POST['available'])
+		date_parsed = date[6:] + '-' + date[:-8] + '-' + date[3:-5]
+		s           = Suite(parent_building=building, number=number,
+		              date_available=date_parsed)
 		s.save()
 
 		return HttpResponseRedirect(reverse('leasingPortal:building_detail', args=(building_id,)))
