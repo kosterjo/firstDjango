@@ -30,7 +30,7 @@ class BuildingViewTests(TestCase):
 		if buildings exist, no message should be displayed
 		'''
 		create_building("new_building")
-		response = self.client.get(reverse('leasingPortal:buildings'))
+		response = self.client.get(reverse('leasingPortal:buildings',))
 		self.assertEqual(response.status_code, 200)
 		self.assertNotContains(response, "you haven't uploaded a building yet!")
 		self.assertQuerysetEqual(response.context['building_list'], ['<Building: new_building>'])
@@ -40,3 +40,12 @@ class BuildingViewTests(TestCase):
 		if building has no children suites, an appropriate message 
 		should be displayed
 		'''
+		building = create_building("new_building")
+		url      = reverse('leasingPortal:building_detail', args=(building.id,))
+		response = self.client.get(url)
+
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, "you haven't uploaded a suite yet!")
+		self.assertQuerysetEqual(response.context['suite_list'], [])
+
+
