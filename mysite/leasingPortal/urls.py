@@ -1,7 +1,7 @@
 from django.conf.urls import url, include, patterns
 from django.contrib import admin
-#from leasingPortal import views
-import views
+
+from . import views
 
 app_name = 'leasingPortal'
 
