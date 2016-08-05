@@ -9,11 +9,15 @@
   <a href="{% url 'leasingPortal:building_edit' building.id %}" title="">Edit</a>
 
   <p>Suites:</p>
+  {% if suite_list %}
   <ul>
     {% for suite in suite_list %}
   	<li><p>Suite #{{ suite.number }}</p></li>
   	{% endfor %}
   </ul>
+  {% else %}
+  <p>you haven't uploaded a suite yet!</p>
+  {% endif %}
   <br>
 
   {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
