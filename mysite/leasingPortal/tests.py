@@ -109,4 +109,19 @@ class SuiteTests(TestCase):
 		self.assertEqual(response.status_code, 200)
 		self.assertContains(response, "you didn&#39;t enter an availability date")
 
+	def test_successful_suite_post(self):
+"""		'''
+		if successful suite post is made, the sutie should
+		be added to the list of suites on the page
+		'''
+		building = create_building("new_building")
+		url      = reverse('leasingPortal:add_suite', args=(building.id,),)
+		response = self.client.post(url, {'number': '1', 'available': '08/05/2016'})
+
+
+		self.assertEqual(response.status_code, 302)
+		self.assertQuerysetEqual(response.context['suite_list'], 
+		                         ['<Suite: Suite #1>'])
+"""	
+
 
