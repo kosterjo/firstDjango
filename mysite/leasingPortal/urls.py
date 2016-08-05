@@ -8,6 +8,8 @@ app_name = 'leasingPortal'
 urlpatterns = [
   url(r'^$', views.index, name = 'index'),
   url(r'^buildings/$', views.buildings, name = 'buildings'),
+  url(r'^buildings/(?P<building_id>[0-9]+)/edit/submit$', 
+    views.post_building_edit, name = 'post_building_edit'),
   url(r'^buildings/(?P<building_id>[0-9]+)/$', 
       views.building_detail, name = 'building_detail'),
   url(r'^buildings/(?P<building_id>[0-9]+)/edit/$', 

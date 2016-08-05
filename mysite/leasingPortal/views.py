@@ -38,6 +38,18 @@ def building_edit(request, building_id):
 
 	return render(request, 'leasingPortal/buildingEdit.html', context)
 
+def post_building_edit(request, building_id):
+	building = get_object_or_404(Building, pk=building_id)
+
+	print "fuck this"
+	if not (request.POST['address']):
+		return render(request, 'leasingPortal/buildingEdit.html', {
+    'building': building, 
+    'error_message': "building address cannot be blank",
+	})
+	else: 
+		return HttpResponseRedirect(reverse('leasingPortal:building_edit', args=(building_id,)))
+
 def add_suite(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
 	suite_list = get_list_or_404(Suite, parent_building = building.id) 
