@@ -33,7 +33,8 @@ class BuildingViewTests(TestCase):
 		response = self.client.get(reverse('leasingPortal:buildings',))
 		self.assertEqual(response.status_code, 200)
 		self.assertNotContains(response, "you haven't uploaded a building yet!")
-		self.assertQuerysetEqual(response.context['building_list'], ['<Building: new_building>'])
+		self.assertQuerysetEqual(response.context['building_list'], 
+		                         ['<Building: new_building>'])
 
 	def test_building_details_view_without_suites(self):
 		'''
@@ -48,4 +49,16 @@ class BuildingViewTests(TestCase):
 		self.assertContains(response, "you haven't uploaded a suite yet!")
 		self.assertQuerysetEqual(response.context['suite_list'], [])
 
+	def test_building_details_view_with_suites(self):
+		'''
+		if building has children suites, no message should be displayed
+		'''
+		building = create_building("new_building")
+		create_suite(building, 1, [2016, 8, 5])
+		url      = reverse('leasingPortal:building_detail', args=(building.id,))
+		response = self.client.get(url)
 
+		self.assertEqual(response.status_code, 200)
+		self.assertNotContains(response, "you haven't uploaded a suite yet!")
+		self.assertQuerysetEqual(response.context['suite_list'], 
+		                         ['<Suite: Suite #1>'])
