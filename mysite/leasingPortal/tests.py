@@ -55,6 +55,25 @@ class BuildingViewTests(TestCase):
 		'''
 		building = create_building("new_building")
 		create_suite(building, 1, [2016, 8, 5])
+
+		url      = reverse('leasingPortal:building_detail', args=(building.id,))
+		response = self.client.get(url)
+
+		self.assertEqual(response.status_code, 200)
+		self.assertNotContains(response, "you haven't uploaded a suite yet!")
+		self.assertQuerysetEqual(response.context['suite_list'], 
+		                         ['<Suite: Suite #1>'])
+
+	def test_building_details_view_with_bastard_suites(self):
+		'''
+		if building has children suites, no message should be displayed
+		'''
+		building  = create_building("new_building")
+		building2 = create_building("newer_building")
+
+		create_suite(building, 1, [2016, 8, 5])
+		create_suite(building2, 2, [2016, 8, 5])
+
 		url      = reverse('leasingPortal:building_detail', args=(building.id,))
 		response = self.client.get(url)
 
