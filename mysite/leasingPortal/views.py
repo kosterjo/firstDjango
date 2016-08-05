@@ -41,7 +41,6 @@ def building_edit(request, building_id):
 def post_building_edit(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
 
-	print "fuck this"
 	if not (request.POST['address']):
 		return render(request, 'leasingPortal/buildingEdit.html', {
     'building': building, 
