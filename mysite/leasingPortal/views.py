@@ -41,17 +41,24 @@ def building_edit(request, building_id):
 def add_suite(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
 
-	if not bool(request.POST['number']): # == None:
+	if not bool(request.POST['number']):
 		return render(request, 'leasingPortal/buildingDetail.html', {
 	    'building': building, 
-	    'error_message': "you didn't add a suite number",
+	    'error_message': "you didn't enter a suite number",
+		})
+
+	if not bool(request.POST['available']):
+		return render(request, 'leasingPortal/buildingDetail.html', {
+	    'building': building, 
+	    'error_message': "you didn't enter an availability date",
 		})
 
 	else: 
 		number = request.POST['number']
-		time = datetime.now()
-		s = Suite(parent_building=building, number=number,
-		          date_available=time)
+		date   = request.POST['available']
+		time   = datetime.now()
+		s      = Suite(parent_building=building, number=number,
+		         date_available=date)
 		s.save()
 
 		return HttpResponseRedirect(reverse('leasingPortal:building_detail', args=(building_id,)))

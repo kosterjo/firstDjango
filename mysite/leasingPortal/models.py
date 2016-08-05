@@ -15,7 +15,7 @@ class Building(models.Model):
 class Suite(models.Model):
 	parent_building = models.ForeignKey(Building, on_delete=models.CASCADE)
 	number          = models.IntegerField()
-	date_available  = models.DateTimeField(null = True)
+	date_available  = models.DateField(null = True)
 	modified        = ModificationDateTimeField()
 
 	def __str__(self):
