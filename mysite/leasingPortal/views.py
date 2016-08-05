@@ -47,6 +47,8 @@ def post_building_edit(request, building_id):
     'error_message': "building address cannot be blank",
 	})
 	else: 
+		building.address = request.POST['address']
+		building.save()
 		return HttpResponseRedirect(reverse('leasingPortal:building_edit', args=(building_id,)))
 
 def add_suite(request, building_id):
