@@ -24,3 +24,13 @@ class BuildingViewTests(TestCase):
 		self.assertEqual(response.status_code, 200)
 		self.assertContains(response, "you haven't uploaded a building yet!")
 		self.assertQuerysetEqual(response.context['building_list'], [])
+
+	def test_buildings_view_with_buildings(self):
+		'''
+		if buildigns exist, no message should be displayed
+		'''
+		create_building("new_building")
+		response = self.client.get(reverse('leasingPortal:buildings'))
+		self.assertEqual(response.status_code, 200)
+		self.assertNotContains(response, "you haven't uploaded a building yet!")
+		self.assertQuerysetEqual(response.context['building_list'], ['<Building: new_building>'])
