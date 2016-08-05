@@ -1,7 +1,11 @@
+from datetime import datetime
+
 from django.shortcuts import render, get_object_or_404, get_list_or_404
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.template import loader
 from django.shortcuts import render
+from django.utils import timezone
+from django.core.urlresolvers import reverse
 
 from .models import Building, Suite
 
@@ -37,8 +41,17 @@ def building_edit(request, building_id):
 def add_suite(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
 
-	if request.POST['number'] == '':
+	if not bool(request.POST['number']): # == None:
 		return render(request, 'leasingPortal/buildingDetail.html', {
 	    'building': building, 
 	    'error_message': "you didn't add a suite number",
 		})
+
+	else: 
+		number = request.POST['number']
+		time = datetime.now()
+		s = Suite(parent_building=building, number=number,
+		          date_available=time)
+		s.save()
+
+		return HttpResponseRedirect(reverse('leasingPortal:building_detail', args=(building_id,)))
