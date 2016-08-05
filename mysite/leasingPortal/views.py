@@ -40,7 +40,7 @@ def building_edit(request, building_id):
 
 def add_suite(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
-	suite_list = get_list_or_404(Suite, parent_building = building.id)
+	suite_list = get_list_or_404(Suite, parent_building = building.id) 
 
 	if not bool(request.POST['number']):
 		return render(request, 'leasingPortal/buildingDetail.html', {
@@ -54,7 +54,7 @@ def add_suite(request, building_id):
 	    'building': building, 
 	    'error_message': "you didn't enter an availability date",
 	    'suite_list': suite_list,
-		})
+		}) 	
 
 	else: 
 		number = request.POST['number']
