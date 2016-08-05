@@ -1,1 +1,22 @@
-<h1>Building Edit</h1>
+{% extends "leasingPortal/base.html" %}
+
+{% block content %}
+
+<h1>Edit Building: {{ building.address }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'leasingPortal:add_suite' building.id %}" method="post">
+  {% csrf_token %}
+
+    <p>Suite Number:</p>
+    <input type="text" name="number" id="suite_number"/>
+
+    <br><p style="display:">Date Available:</p>
+
+    <input type="date" name="available" class="datepicker" style="display:" min="2016-08-05" max="2017-01-01">
+     
+    <br> <input type="submit" value="Suite"/>
+  </form>
+
+{% endblock %}
