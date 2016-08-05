@@ -13,10 +13,11 @@
   	<li><p>Suite #{{ suite.number }}</p></li>
   	{% endfor %}
   </ul>
-
+  <br>
+  
   {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-  <br><p>Add Suite</p>
+  <p>Add Suite</p>
   <form action="{% url 'leasingPortal:add_suite' building.id %}" method="post">
   {% csrf_token %}
 
