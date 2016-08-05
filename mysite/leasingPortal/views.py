@@ -13,7 +13,7 @@ def index(request):
 	return render(request, 'leasingPortal/index.html')
 
 def buildings(request):
-	building_list = get_list_or_404(Building)
+	building_list =Building.objects.all()
 	context = {
 	  'building_list': building_list,
 	}
