@@ -96,3 +96,17 @@ class SuiteTests(TestCase):
 
 		self.assertEqual(response.status_code, 200)
 		self.assertContains(response, "you didn&#39;t enter a suite number")
+
+	def test_no_date_suite_post(self):
+		'''
+		if no available_date is included in the post, 
+		and appropriate error message should be displayed
+		'''
+		building = create_building("new_building")
+		url      = reverse('leasingPortal:add_suite', args=(building.id,),)
+		response = self.client.post(url, {'number': '1', 'available': ''})
+
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, "you didn&#39;t enter an availability date")
+
+
