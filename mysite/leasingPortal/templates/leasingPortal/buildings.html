@@ -8,7 +8,7 @@
   {% if buildings_and_suites %}
   <ul>
   	{% for building, suites in buildings_and_suites %}
-      <li><p>{{ building }}</p> <a href="{% url 'leasingPortal:building_edit' building.id %}" title="">Edit</a></li>
+      <li><p>Address: {{ building }}</p> <a href="{% url 'leasingPortal:building_edit' building.id %}" title="">Edit</a></li>
 
       <ul>
         {% for suite in suites %}
@@ -17,7 +17,7 @@
         {% endfor %}
       </ul>
 
-        <a href="{% url 'leasingPortal:add_suite' building.id %}" title="">Add Suite</a>
+      <br>  <a href="{% url 'leasingPortal:add_suite' building.id %}" title="" style="padding-left:20px">Add Suite</a>
 
   	{% endfor %}
   </ul>
