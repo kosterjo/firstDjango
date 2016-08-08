@@ -66,7 +66,7 @@ def post_add_suite(request, building_id):
 
 	if not (request.POST['available']):
 		return render(request, 'leasingPortal/addSuite.html', {
-	    'building_id': building_id, 
+	    'building_id':   building_id, 
 	    'error_message': "you didn't enter an availability date",
 		}) 	
 
@@ -79,3 +79,12 @@ def post_add_suite(request, building_id):
 		s.save()
 
 		return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
+
+def edit_suite(request, building_id, suite_id):
+	suite = get_object_or_404(Suite, pk=suite_id)
+	context = {
+	  'building_id': building_id,
+	  'suite':       suite
+	}
+
+	return render(request, 'leasingPortal/editSuite.html', context)
