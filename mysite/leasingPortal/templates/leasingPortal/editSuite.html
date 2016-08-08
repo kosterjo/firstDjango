@@ -1,7 +1,9 @@
 {% extends "leasingPortal/base.html" %}
 
 {% block content %}
-<h1>Edit {{ suite }}</h1>
+	<a href="{% url 'leasingPortal:buildings' %}">Back to Buildings Page</a>
+
+	<h1>Edit {{ suite }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
