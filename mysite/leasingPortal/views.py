@@ -27,6 +27,9 @@ def buildings(request):
 
 	return render(request, 'leasingPortal/buildings.html', context)
 
+def add_building(request):
+	return render(request, 'leasingPortal/addBuilding.html')
+
 def building_edit(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
 	context = {
@@ -103,3 +106,4 @@ def post_edit_suite(request, building_id, suite_id):
 
 	suite.save()
 	return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
+
