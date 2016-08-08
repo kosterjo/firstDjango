@@ -53,16 +53,13 @@ def building_edit(request, building_id):
 
 def post_building_edit(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
+	address  = request.POST['address']
 
-	if not (request.POST['address']):
-		return render(request, 'leasingPortal/buildingEdit.html', {
-    'building': building, 
-    'error_message': "building address cannot be blank",
-	})
-	else: 
-		building.address = request.POST['address']
-		building.save()
-		return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
+	if address:
+		building.address = address
+
+	building.save()
+	return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
 
 def add_suite(request, building_id):
 	context = {
