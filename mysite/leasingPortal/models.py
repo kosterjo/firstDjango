@@ -20,6 +20,3 @@ class Suite(models.Model):
 
 	def __str__(self):
 		return "Suite #" + str(self.number)
-
-	def date_available(self):
-		return "twerking"

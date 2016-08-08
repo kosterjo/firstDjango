@@ -12,7 +12,7 @@
     <input type="text" name="number" id="suite_number" value="{{ suite.number }}"/>
 
     <p>Date Available</p>
-    <input type="date" name="available" class="datepicker" style="display:" value="{{ suite.date_available }}">
+    <input type="date" name="available" class="datepicker" style="display:" value="{{ suite.date_available|date:"m/d/Y" }}">
      
     <br> <input type="submit" value="Edit Suite"/>
   </form>
