@@ -18,4 +18,6 @@ urlpatterns = [
       views.post_add_suite, name = 'post_add_suite'),
   url(r'^buildings/(?P<building_id>[0-9]+)/suites/(?P<suite_id>[0-9]+)/$', 
       views.edit_suite, name = 'edit_suite'),
+  url(r'^buildings/(?P<building_id>[0-9]+)/suites/(?P<suite_id>[0-9]+)/post$', 
+      views.post_edit_suite, name = 'post_edit_suite'),
 ]

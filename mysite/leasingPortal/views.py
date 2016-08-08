@@ -88,3 +88,18 @@ def edit_suite(request, building_id, suite_id):
 	}
 
 	return render(request, 'leasingPortal/editSuite.html', context)
+
+def post_edit_suite(request, building_id, suite_id):
+	suite       = get_object_or_404(Suite, pk=suite_id)
+	number      = request.POST['number']
+	date        = str(request.POST['available'])
+
+	if number:
+		suite.number = number
+
+	if date:
+		date_parsed = date[6:] + '-' + date[:-8] + '-' + date[3:-5]
+		suite.date_available = date_parsed
+
+	suite.save()
+	return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
