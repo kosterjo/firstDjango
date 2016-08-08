@@ -17,7 +17,7 @@
         {% endfor %}
       </ul>
 
-        <p>Add Suite</p>
+        <a href="{% url 'leasingPortal:add_suite' building.id %}" title="">Add Suite</a>
         <form action="{% url 'leasingPortal:post_add_suite' building.id %}" method="post">
           {% csrf_token %}
 

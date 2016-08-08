@@ -48,6 +48,13 @@ def post_building_edit(request, building_id):
 		building.save()
 		return HttpResponseRedirect(reverse('leasingPortal:building_edit', args=(building_id,)))
 
+def add_suite(request, building_id):
+	context = {
+	  'building_id': building_id,
+	}
+
+	return render(request, 'leasingPortal/addSuite.html', context)
+
 def post_add_suite(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
 	suite_list = Suite.objects.filter(parent_building=building.id) 

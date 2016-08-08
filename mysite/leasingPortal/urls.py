@@ -12,6 +12,8 @@ urlpatterns = [
     views.post_building_edit, name = 'post_building_edit'),
   url(r'^buildings/(?P<building_id>[0-9]+)/edit/$', 
       views.building_edit, name = 'building_edit'),
-  url(r'^buildings/(?P<building_id>[0-9]+)/add/$', 
+  url(r'^buildings/(?P<building_id>[0-9]+)/addSuite/$',  
+  	  views.add_suite, name = 'add_suite'),
+  url(r'^buildings/(?P<building_id>[0-9]+)/addSuite/post/$', 
       views.post_add_suite, name = 'post_add_suite'),
 ]
