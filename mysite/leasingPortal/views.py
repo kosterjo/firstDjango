@@ -14,8 +14,14 @@ def index(request):
 
 def buildings(request):
 	building_list = Building.objects.all()
+	all_suites = []
+
+	for building in building_list:
+		all_suites.append( Suite.objects.filter(parent_building=building.id))
+
 	context = {
 	  'building_list': building_list,
+	  'all_suites': all_suites,
 	}
 
 	return render(request, 'leasingPortal/buildings.html', context)
