@@ -1,5 +1,20 @@
 {% extends "leasingPortal/base.html" %}
 
 {% block content %}
-<h1>Edit Suite</h1>
+<h1>Edit {{ suite }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+	<form action="" method="post">
+  {% csrf_token %}
+
+    <p>Suite Number:</p>
+    <input type="text" name="number" id="suite_number" value="{{ suite.number }}"/>
+
+    <p>Date Available</p>
+    <input type="date" name="available" class="datepicker" style="display:" value="{{ suite.date_available }}">
+     
+    <br> <input type="submit" value="Edit Suite"/>
+  </form>
+
 {% endblock %}
