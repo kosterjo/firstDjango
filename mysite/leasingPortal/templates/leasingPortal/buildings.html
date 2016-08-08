@@ -18,7 +18,10 @@
       {% if suites %}
         <br>  <ul>
           {% for suite in suites %}
-            <li>{{suite}} <a href="{% url 'leasingPortal:edit_suite' building.id suite.id %}" title="">Edit</a></li>
+            <li>{{suite}} 
+              <a href="{% url 'leasingPortal:edit_suite' building.id suite.id %}" title="">Edit</a>
+              <a href="{% url 'leasingPortal:delete_suite' suite.id %}" title="">Delete</a>
+            </li>
 
           {% endfor %}
         </ul>

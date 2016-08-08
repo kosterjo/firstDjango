@@ -25,4 +25,6 @@ urlpatterns = [
       views.edit_suite, name = 'edit_suite'),
   url(r'^buildings/(?P<building_id>[0-9]+)/suites/(?P<suite_id>[0-9]+)/post$', 
       views.post_edit_suite, name = 'post_edit_suite'),
+  url(r'^buildings/suites/(?P<suite_id>[0-9]+)/delete/$', 
+      views.delete_suite, name = 'delete_suite'),
 ]

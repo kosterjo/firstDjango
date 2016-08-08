@@ -123,3 +123,8 @@ def post_edit_suite(request, building_id, suite_id):
 	suite.save()
 	return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
 
+def delete_suite(request, suite_id):
+	s = get_object_or_404(Suite, pk=suite_id)
+	s.delete()
+
+	return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
