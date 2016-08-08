@@ -61,6 +61,12 @@ def post_building_edit(request, building_id):
 	building.save()
 	return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
 
+def delete_building(request, building_id):
+	b = get_object_or_404(Building, pk=building_id)
+	b.delete()
+
+	return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
+
 def add_suite(request, building_id):
 	context = {
 	  'building_id': building_id,
