@@ -4,6 +4,9 @@
 
 	<h1>Add Suite</h1>
 
+	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
   <form action="{% url 'leasingPortal:post_add_suite' building_id %}" method="post">
     {% csrf_token %}
 
