@@ -1,8 +1,9 @@
 {% extends "leasingPortal/base.html" %}
 
 {% block content %}
-
-<h1>Edit Building: {{ building.address }}</h1>
+	<a href="{% url 'leasingPortal:buildings' %}">Back to Buildings Page</a>
+	
+	<h1>Edit Building: {{ building.address }}</h1>
 
 	<form action="{% url 'leasingPortal:post_building_edit' building.id %}" method="post">
   {% csrf_token %}
