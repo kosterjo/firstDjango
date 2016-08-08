@@ -10,12 +10,17 @@
   	{% for building, suites in buildings_and_suites %}
       <li>Address: {{ building }} <a href="{% url 'leasingPortal:building_edit' building.id %}" title="">Edit</a></li>
 
+      {% if suites %}
       <br>  <ul>
         {% for suite in suites %}
           <li>{{suite}} <a href="{% url 'leasingPortal:edit_suite' building.id suite.id %}" title="">Edit</a></li>
 
         {% endfor %}
       </ul>
+
+      {% else %}
+        <p>you haven't uploaded a suite yet!</p>
+      {% endif %}
 
       <br>  <a href="{% url 'leasingPortal:add_suite' building.id %}" title="" style="padding-left:20px">Add Suite</a>
       <br><br><br>
