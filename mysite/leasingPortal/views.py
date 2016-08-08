@@ -84,4 +84,4 @@ def add_suite(request, building_id):
 		              date_available=date_parsed)
 		s.save()
 
-		return HttpResponseRedirect(reverse('leasingPortal:building_detail', args=(building_id,)))
+		return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
