@@ -10,9 +10,10 @@
 
   <p>Suites:</p>
   {% if suite_list %}
-  <ul>
+  <ul style='list-style-type:none;'>
     {% for suite in suite_list %}
-  	<li><p>Suite #{{ suite.number }}</p></li>
+  	<li style='display:inline;'><p>Suite #{{ suite.number }}</p> </li>
+    <li style='display:inline;'><a href="" title="">Edit</a></li>
   	{% endfor %}
   </ul>
   {% else %}
