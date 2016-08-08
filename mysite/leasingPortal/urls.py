@@ -9,6 +9,8 @@ urlpatterns = [
   url(r'^$', views.index, name = 'index'),
   url(r'^buildings/$', views.buildings, name = 'buildings'),
   url(r'^buildings/add/$', views.add_building, name = 'add_building'),
+  url(r'^buildings/add/post$', views.post_add_building, 
+  	  name = 'post_add_building'),
   url(r'^buildings/(?P<building_id>[0-9]+)/edit/$', 
       views.building_edit, name = 'building_edit'),
   url(r'^buildings/(?P<building_id>[0-9]+)/edit/submit$', 
