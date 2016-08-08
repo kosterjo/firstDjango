@@ -27,16 +27,6 @@ def buildings(request):
 
 	return render(request, 'leasingPortal/buildings.html', context)
 
-def building_detail(request, building_id):
-	building = get_object_or_404(Building, pk=building_id)
-	suite_list = Suite.objects.filter(parent_building=building.id)
-	context = {
-	  'building': building,
-	  'suite_list': suite_list,
-	}
-
-	return render(request, 'leasingPortal/buildingDetail.html', context )
-
 def building_edit(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
 	context = {
