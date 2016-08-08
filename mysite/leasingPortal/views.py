@@ -34,7 +34,14 @@ def post_add_building(request):
 	if not (request.POST['address']):
 		return render(request, 'leasingPortal/addBuilding.html', {
 	    'error_message': "you didn't enter a building address",
-		})	
+		})
+
+	else:
+		address = request.POST['address']
+		b       = Building(address=address)	
+		b.save()
+
+		return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
 
 def building_edit(request, building_id):
 	building = get_object_or_404(Building, pk=building_id)
