@@ -2,6 +2,19 @@
 
 {% block content %}
 
-<p>add suite page</p>
+	<h1>Add Suite</h1>
+
+  <form action="{% url 'leasingPortal:post_add_suite' building_id %}" method="post">
+    {% csrf_token %}
+
+    <p>Suite Number:</p>
+    <input type="text" name="number" id="suite_number"/>
+
+    <br><p style="display:">Date Available:</p>
+
+    <input type="date" name="available" class="datepicker" style="display:" min="2016-08-05" max="2017-01-01">
+
+    <br> <input type="submit" value="Add Suite"/>
+  </form>
 
 {% endblock %}
