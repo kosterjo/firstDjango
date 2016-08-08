@@ -18,7 +18,7 @@
       </ul>
 
         <p>Add Suite</p>
-        <form action="{% url 'leasingPortal:add_suite' building.id %}" method="post">
+        <form action="{% url 'leasingPortal:post_add_suite' building.id %}" method="post">
           {% csrf_token %}
 
           <p>Suite Number:</p>
