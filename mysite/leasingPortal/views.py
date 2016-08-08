@@ -17,11 +17,12 @@ def buildings(request):
 	all_suites = []
 
 	for building in building_list:
-		all_suites.append( Suite.objects.filter(parent_building=building.id))
+		all_suites.append(Suite.objects.filter(parent_building=building.id))
+
+	buildings_and_suites = zip(building_list, all_suites)
 
 	context = {
-	  'building_list': building_list,
-	  'all_suites': all_suites,
+	  'buildings_and_suites': buildings_and_suites
 	}
 
 	return render(request, 'leasingPortal/buildings.html', context)

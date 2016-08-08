@@ -4,10 +4,19 @@
   <h1>Buildings</h1>
   <br>
   
-  {% if building_list %}
+
+  {% if buildings_and_suites %}
   <ul>
-  	{% for building in building_list %}
-  	<li><a href="{% url 'leasingPortal:building_detail' building.id %}">{{building.address}}</a></li>
+  	{% for building, suites in buildings_and_suites %}
+      <li><a href="{% url 'leasingPortal:building_detail' building.id %}">{{building.address}}</a></li>
+
+      <ul>
+        {% for suite in suites %}
+          <li>sweet</li>
+
+        {% endfor %}
+      </ul>
+
   	{% endfor %}
   </ul>
   {% else %}
