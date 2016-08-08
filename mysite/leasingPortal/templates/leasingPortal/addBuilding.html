@@ -1,0 +1,16 @@
+{% extends "leasingPortal/base.html" %}
+
+{% block content %}
+	<h1>Add Building</h1>
+
+	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+	<form action="" method="post">
+  {% csrf_token %}
+
+    <p>Building Address:</p>
+    <input type="text" name="address" id="building_address" value="{{ building.address }}"/>
+     
+    <br> <input type="submit" value="Add Building"/>
+  </form>
+{% endblock %}
