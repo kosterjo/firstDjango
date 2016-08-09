@@ -9,3 +9,10 @@
 	top: 0;
 	position: fized;
 }
+
+div.jumbotron {
+	background: white url("images/landing_background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 600px;
+}
