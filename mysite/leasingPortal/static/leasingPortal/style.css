@@ -8,10 +8,15 @@
 }
 
 div.jumbotron {
-	background: white url("images/landing_background.jpg");
+	background: white url("images/background_darkened.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 600px;
+}
+
+div.signup {
+	height: 300px;
+	background-color: #ccc;
 }
 
 .btn {
