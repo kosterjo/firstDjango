@@ -7,6 +7,11 @@
 	position: fized;
 }
 
+input	{
+	display: inline;
+	margin: 10px 0px 10px 0px;
+}
+
 div.jumbotron {
 	background: white url("images/background_darkened.jpg");
 	background-size: cover;
@@ -15,8 +20,13 @@ div.jumbotron {
 }
 
 div.signup {
-	height: 300px;
+	height: 400px;
 	background-color: #ccc;
+}
+
+p.signup {
+	margin: 0;
+	font-size: 18px;
 }
 
 .btn {
