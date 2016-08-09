@@ -24,11 +24,6 @@ div.signup {
 	background-color: #ccc;
 }
 
-p.signup {
-	margin: 0;
-	font-size: 18px;
-}
-
 .btn {
 	background-color: #55b780;
 	border: none;
@@ -39,9 +34,6 @@ p.signup {
 	color: white;
 }
 
-.btn.jumbo {
-	
-}
 
 
 
