@@ -1,3 +1,11 @@
 #header {
 	background-color: red; 
 }
+
+#green-accent {
+	background-color: #55b780;
+	width: 100%;
+	height: 5px;
+	top: 0;
+	position: fized;
+}
