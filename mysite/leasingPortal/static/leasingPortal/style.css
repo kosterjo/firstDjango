@@ -16,7 +16,7 @@ div.jumbotron {
 
 .btn {
 	background-color: #55b780;
-	border-color: white;
+	border: none;
 	color: white;
 }
 
