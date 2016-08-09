@@ -128,3 +128,6 @@ def delete_suite(request, suite_id):
 	s.delete()
 
 	return HttpResponseRedirect(reverse('leasingPortal:buildings', kwargs={}))
+
+def bootstrap_tester(request):
+	return render(request, 'leasingPortal/bootstrapTester.html')
