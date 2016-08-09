@@ -16,3 +16,11 @@ div.jumbotron {
 	background-repeat: no-repeat;
 	height: 600px;
 }
+
+h1.dark_background {
+	color: white;
+}
+
+p.dark_background {
+	color: white;
+}
