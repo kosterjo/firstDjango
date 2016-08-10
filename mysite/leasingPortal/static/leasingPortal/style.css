@@ -9,6 +9,7 @@ input	{
 
 img.logo {
 	display: inline;
+	margin-top: 10px;
 	width: 20%;
 	float: left;
 }
