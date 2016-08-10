@@ -7,11 +7,21 @@ input	{
 	margin:; 0px 10px 0px;
 }
 
-div.jumbotron {
+img.logo {
+	display: inline;
+	width: 75%;
+
+}
+
+#asdf {
 	background: white url("images/background_darkened.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 600px;
+	width: 100%;
+}
+
+div.jumbotron {
+	background: none;
 }
 
 div.signup {
@@ -19,12 +29,24 @@ div.signup {
 	background-color: #ccc;
 }
 
+div.logo {
+	background: url("images/TBLogo.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 100px;
+	margin-bottom: 0px;
+}
 
 #green-accent {
 	background-color: #55b780;
 	width: 100%;
 	height: 5px;
 	top: 0;
+}
+
+.row {
+	margin-bottom: 0px;
 }
 
 .submit {
@@ -49,8 +71,7 @@ div.signup {
 }
 
 .btn.jumbo {
-	margin-top: ;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 }
 
 .jumbo-copy {
