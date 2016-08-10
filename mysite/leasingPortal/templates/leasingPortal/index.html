@@ -21,20 +21,15 @@
 
   </head>
   <body>
-    <div id = "green-accent"></div>
+    <div id = "green-accent"></div>				
+    <img class="logo pull-left" src="{% static 'leasingPortal/images/TBLogo.svg' %}" alt="TenantBase Logo">
 
-    <div class="container top" id="asdf">
-	    <div class="container">
-				<div class="row">
-					<div class="col-md-4 align-left">
-						<img class="logo" src="{% static 'leasingPortal/images/TBLogo.svg' %}" alt="TenantBase Logo">
-					</div>
 
-					<div class="col-md-4 col-md-offset-4">
-						<p><a class="btn jumbo btn-primary btn-lg" id="manageProperties" href="{% url 'leasingPortal:buildings' %}" role="button">Manage Properties</a></p> 
-					</div>
-				</div>
-	    </div>
+
+    <div class="container top" id="header">
+    	<p class="jumbo-button"><a class="btn jumbo btn-primary btn-lg pull-right" id="manageProperties" href="{% url 'leasingPortal:buildings' %}" role="button">Manage Properties</a></p> 
+
+	    <div class="row"></div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     	<div class="row">

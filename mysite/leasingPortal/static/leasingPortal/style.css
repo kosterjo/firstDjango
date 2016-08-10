@@ -9,11 +9,11 @@ input	{
 
 img.logo {
 	display: inline;
-	width: 75%;
-
+	width: 20%;
+	float: left;
 }
 
-#asdf {
+#header {
 	background: white url("images/background_darkened.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -29,14 +29,6 @@ div.signup {
 	background-color: #ccc;
 }
 
-div.logo {
-	background: url("images/TBLogo.svg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 50px;
-	width: 100px;
-	margin-bottom: 0px;
-}
 
 #green-accent {
 	background-color: #55b780;
@@ -60,8 +52,13 @@ div.logo {
 	color: white;
 }
 
+
 .dark_background {
 	color: white;
+}
+
+p.jumbo-button {
+	margin-right: 1%;
 }
 
 .form-group.title {
@@ -71,7 +68,8 @@ div.logo {
 }
 
 .btn.jumbo {
-	margin-bottom: 0px;
+	margin-top: 1.5%;
+
 }
 
 .jumbo-copy {
