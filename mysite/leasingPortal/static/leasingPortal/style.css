@@ -39,6 +39,11 @@ div.signup {
 	top: 0;
 }
 
+#signup-title {
+	margin-top: 20px;
+	font-size: 20px;
+}
+
 .row {
 	margin-bottom: 0px;
 }
@@ -63,12 +68,6 @@ p.jumbo-button {
 	margin-right: 1%;
 }
 
-.form-group.title {
-	margin-top: 25px;
-	font-size: 18;
-
-}
-
 .btn.jumbo {
 	margin-top: 1.5%;
 
@@ -78,6 +77,20 @@ p.jumbo-button {
 	margin-top: 0px;
 }
 
+
+@media (max-width: 992px) {
+	#header {
+		background: none;
+		background-color: red;
+	}
+}
+
+@media (max-width: 768px) {
+	#header {
+		background: none;
+		background-color: blue;
+	}
+}
 
 
 
