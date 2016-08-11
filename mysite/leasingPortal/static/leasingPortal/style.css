@@ -29,6 +29,7 @@ div.jumbotron {
 div.signup {
 	height: 400px;
 	background-color: #ccc;
+	border-radius: 10px;
 }
 
 
