@@ -45,6 +45,7 @@ div.signup {
 }
 
 #signup-title {
+	margin-top: 20px;
 	font-size: 20px;
 }
 
@@ -63,7 +64,6 @@ div.signup {
 	color: white;
 }
 
-
 .light-text {
 	margin-top: 0px;
 	color: white;
@@ -75,9 +75,4 @@ p.jumbo-button {
 
 .btn.jumbo {
 	margin-top: 1.5%;
-
-}
-
-.jumbo-copy {
-
 }
