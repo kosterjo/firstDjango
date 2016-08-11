@@ -1,7 +1,0 @@
-*.pyc
-*.pyo
-db.sqlite3
-__init__.py
-migrations/
-node_modules
-npm-debug.log
