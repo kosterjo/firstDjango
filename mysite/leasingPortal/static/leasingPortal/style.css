@@ -40,7 +40,6 @@ div.signup {
 }
 
 #signup-title {
-	margin-top: 20px;
 	font-size: 20px;
 }
 
@@ -77,20 +76,6 @@ p.jumbo-button {
 	margin-top: 0px;
 }
 
-
-@media (max-width: 992px) {
-	#header {
-		background: none;
-		background-color: red;
-	}
-}
-
-@media (max-width: 768px) {
-	#header {
-		background: none;
-		background-color: blue;
-	}
-}
 
 
 
