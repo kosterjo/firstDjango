@@ -1,5 +1,7 @@
 body {
 	min-width: 1000px;
+	width: auto !important;
+	width: 1000px;
 }
 
 h2 {
@@ -28,6 +30,13 @@ img.logo {
 
 div.jumbotron {
 	background: none;
+
+}
+
+div.jumbo-content {
+	min-width: 1000px;
+	width: auto !important;
+	width: 1000px
 }
 
 div.signup {

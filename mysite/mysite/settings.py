@@ -31,14 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'compressor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'leasingPortal',
     'django_extensions',
+    'leasingPortal',
+    'static_precompiler',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -120,4 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
+STATIC_URL  = '/static/'
+MEDIA_ROOT  = 'media'
+MEDIA_URL   = '/media/'
